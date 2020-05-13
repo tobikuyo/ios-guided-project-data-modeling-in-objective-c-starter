@@ -12,14 +12,13 @@
 
 - (instancetype)initWithName:(NSString *)name {
     if (self = [super init]) {
-        _name = name;
+        _name = [name copy];
     }
 
     return self;
 }
 
-- (NSString *)description
-{
+- (NSString *)description {
     return self.name;
 }
 

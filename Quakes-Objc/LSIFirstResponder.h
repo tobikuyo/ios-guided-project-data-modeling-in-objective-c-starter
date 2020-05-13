@@ -12,7 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LSIFirstResponder : NSObject
 
-@property (nonatomic) NSString *name;
+//NSMutableString (var) vs. NSString (let)
+// copy - use with NSString, NSArray (mutable variant)
+// mutableCopy -> NSString -> NSMutableString
+// copy -> NSString -> NSString
+// copy -> NSMutableString -> NSString
+
+@property (nonatomic, copy) NSString *name;
 
 - (instancetype)initWithName:(NSString *)name;
 
