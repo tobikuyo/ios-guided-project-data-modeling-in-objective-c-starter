@@ -30,8 +30,9 @@
     NSDate *time = [NSDate dateWithTimeIntervalSince1970:1388620296020 / 1000.0];
     LSIQuake *quake = [[LSIQuake alloc] initWithDictionary:quakeDictionary];
     NSLog(@"quake: %@", quake);
-    
-    XCTAssertEqualWithAccuracy(1.29, quake.magnitude, 0.0001);
+
+    XCTAssertNil(quake.magnitude);
+//    XCTAssertEqualWithAccuracy(1.29, quake.magnitude, 0.0001);
     XCTAssertEqualObjects(@"10km SSW of Idyllwild, CA", quake.place);
     XCTAssertEqualObjects(time, quake.time);
     XCTAssertEqualWithAccuracy(33.663333299999998, quake.latitude, 0.0001);
