@@ -12,10 +12,14 @@
 
 - (instancetype)initWithName:(NSString *)name {
     if (self = [super init]) {
-        _name = [name copy];
+        _name = [name copy]; // sets instance variable
     }
 
     return self;
+}
+
+- (void)setName:(NSString *)name {
+    _name = [name copy]; // NSMutableString -> NSString
 }
 
 - (NSString *)description {
